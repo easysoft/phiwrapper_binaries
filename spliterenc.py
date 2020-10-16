@@ -8,16 +8,24 @@ def darwin():
             w.write((
                 "darwin(){\n" + process(f.read()) + "\n}\n"
             ).encode("ascii"))
-def elf():
-    with open("spliter.elf.bin", "rb") as f:
+def elfx64():
+    with open("spliter.elfx64.bin", "rb") as f:
         f.read(8)
-        with open("spliter.elf.sh", "wb") as w:
+        with open("spliter.elfx64.sh", "wb") as w:
             w.write((
-                "printelftail(){\n" + process(f.read()) + "\n}\n"
-                + "elf0(){\np '\\177ELF\\002\\001\\001\\0'; printelftail;\n}\n"
-                + "elf8(){\np '\\177ELF\\002\\001\\001\\010'; printelftail;\n}\n"
+                "printelfx64tail(){\n" + process(f.read()) + "\n}\n"
+                + "elf0x64(){\np '\\177ELF\\002\\001\\001\\0'; printelfx64tail;\n}\n"
+                + "elf8x64(){\np '\\177ELF\\002\\001\\001\\010'; printelfx64tail;\n}\n"
             ).encode("ascii"))
-            
+def elfaa64():
+    with open("spliter.elfaa64.bin", "rb") as f:
+        f.read(8)
+        with open("spliter.elfaa64.sh", "wb") as w:
+            w.write((
+                "printelfaa64tail(){\n" + process(f.read()) + "\n}\n"
+                + "elf0aa64(){\np '\\177ELF\\002\\001\\001\\0'; printelfaa64tail;\n}\n"
+                + "elf8aa64(){\np '\\177ELF\\002\\001\\001\\010'; printelfaa64tail;\n}\n"
+            ).encode("ascii"))
             
 
 def process(data):
@@ -99,5 +107,5 @@ def process(data):
 
 
 if __name__ == "__main__":
-    elf()
+    elfx64()
     darwin()
