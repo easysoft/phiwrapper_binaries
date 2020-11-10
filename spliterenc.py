@@ -15,7 +15,7 @@ def elfx64():
             w.write((
                 "printelfx64tail(){\n" + process(f.read()) + "\n}\n"
                 + "elf0x64(){\np '\\177ELF\\002\\001\\001\\0'; printelfx64tail;\n}\n"
-                + "elf8x64(){\np '\\177ELF\\002\\001\\001\\010'; printelfx64tail;\n}\n"
+                + "elf9x64(){\np '\\177ELF\\002\\001\\001\\011'; printelfx64tail;\n}\n"
             ).encode("ascii"))
 def elfaa64():
     with open("spliter.elfaa64.bin", "rb") as f:
@@ -24,7 +24,7 @@ def elfaa64():
             w.write((
                 "printelfaa64tail(){\n" + process(f.read()) + "\n}\n"
                 + "elf0aa64(){\np '\\177ELF\\002\\001\\001\\0'; printelfaa64tail;\n}\n"
-                + "elf8aa64(){\np '\\177ELF\\002\\001\\001\\010'; printelfaa64tail;\n}\n"
+                + "elf9aa64(){\np '\\177ELF\\002\\001\\001\\011'; printelfaa64tail;\n}\n"
             ).encode("ascii"))
             
 
