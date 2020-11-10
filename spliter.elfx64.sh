@@ -1,4 +1,4 @@
-printelftail(){
+printelfx64tail(){
 z3
 p '\002\0>\0\001\0\0\0u\020@'
 z2
@@ -201,9 +201,9 @@ z2
 p '\0\0\0'
 
 }
-elf0(){
-p '\177ELF\002\001\001\0'; printelftail;
+elf0x64(){
+p '\177ELF\002\001\001\0'; printelfx64tail;
 }
-elf8(){
-p '\177ELF\002\001\001\010'; printelftail;
+elf9x64(){
+p '\177ELF\002\001\001\011'; printelfx64tail;
 }
